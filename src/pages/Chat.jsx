@@ -21,7 +21,7 @@ const Chat = () => {
         {/* New Message Button */}
         <button className="p-3 rounded-full text-white 
         bg-gradient-to-r from-[#FD2B7B] to-[#FF7158] 
-        hover:opacity-90 transition duration-300 shadow-md">
+        hover:opacity-90 transition duration-300 shadow-md cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5"
