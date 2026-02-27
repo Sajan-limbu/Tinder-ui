@@ -1,4 +1,3 @@
-// src/App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Layout from "./components/Layout";
@@ -9,6 +8,8 @@ import Chat from "./pages/Chat";
 import Setting from "./pages/Setting";
 import Archieve from "./pages/Archieve";
 import History from "./pages/History";
+import Profile from "./pages/Profile";
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -16,18 +17,30 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route
+          path="/login"
+          element={<Login setIsLoggedIn={setIsLoggedIn} />}
+        />
         <Route path="/register" element={<Register />} />
 
+        {/* Protected Routes */}
         <Route
-          element={isLoggedIn ? <Layout /> : <Navigate to="/" />}
+          path="/"
+          element={isLoggedIn ? <Layout /> : <Navigate to="/login" />}
         >
-          <Route path="/home" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/setting" element={<Setting />} />
-          <Route path="/archieve" element={<Archieve />} />
-          <Route path="/history" element={<History />} />
+         <Route
+  path="profile"
+  element={<Profile setIsLoggedIn={setIsLoggedIn} />}
+/>
+          <Route index element={<Navigate to="home" />} />
+          <Route path="home" element={<Home />} />
+          <Route path="chat" element={<Chat />} />
+          <Route path="setting" element={<Setting />} />
+          <Route path="archieve" element={<Archieve />} />
+          <Route path="history" element={<History />} />
         </Route>
+
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   );

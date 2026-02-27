@@ -13,23 +13,31 @@ const Layout = () => {
                 </h1>
 
                 {/* Profile Image Center */}
-                <div className="flex flex-col items-center mb-5">
-                    <img
-                        src={Anne}
-                        alt="Profile"
-                        className="w-24 h-24 rounded-full object-cover border-4 border-pink-400"
-                    />
-                    <h2 className="text-xl font-semibold mt-1">Profile</h2>
-                </div>
+               {/* Profile Image Center */}
+<div className="flex flex-col items-center mb-6">
+  <img
+    src={Anne}
+    alt="Profile"
+    className="w-24 h-24 rounded-full object-cover border-4 border-pink-400"
+  />
+
+  <Link
+    to="/profile"
+    className="mt-4 px-6 py-2 bg-pink-500 text-white text-lg font-medium rounded-full hover:bg-pink-400 transition duration-200"
+  >
+    Profile
+  </Link>
+</div>
 
                 <nav className="flex flex-col text-2xl font-semibold space-y-4">
+
                     <Link to="/home" className="hover:bg-pink-100 p-2 rounded-lg">
                         Home
                     </Link>
                     <Link to="/chat" className="hover:bg-pink-100 p-2 rounded-lg">
                         Chat
                     </Link>
-                    
+
                     <Link to="/Archieve" className="hover:bg-pink-100 p-2 rounded-lg">
                         Archieve
                     </Link>
