@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,11 +28,13 @@ function Register() {
     }
 
     console.log("User Registered:", formData);
+
+    // Redirect to Main Menu
+    navigate("/main"); // change this if your route is different
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#FD267A] to-[#FF6036]">
-      
       <div className="bg-white w-full max-w-md p-8 rounded-3xl shadow-2xl">
         
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
@@ -123,6 +127,7 @@ function Register() {
           >
             Sign Up
           </button>
+
         </form>
       </div>
     </div>
