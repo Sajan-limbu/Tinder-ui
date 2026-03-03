@@ -16,7 +16,7 @@ const historyData = [
 const History = () => {
   return (
     <div className="flex justify-center mt-4">
-      <div className="w-11/12 md:w-3/4 lg:w-2/3 h-185 bg-white rounded-2xl p-6 shadow-lg">
+      <div className="w-11/12 md:w-3/4 lg:w-2/3 h-168 bg-white rounded-2xl p-6 shadow-lg">
 
         {/* Page Heading */}
         <h2 className="text-4xl font-bold text-center mb-8 text-[#FD2B7B]">
